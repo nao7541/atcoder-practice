@@ -1,4 +1,4 @@
-import numpy as np
+""" import numpy as np
 
 N, K = map(int, input().split())
 friends = [list(map(int, input().split())) for l in range(N)]
@@ -31,4 +31,24 @@ for i in range(N):
     # 進んだ距離を更新する
     b = a
 
-print(ans)
+print(ans) """
+
+# 回答
+N, K = map(int, input().split())
+mat = []
+
+for _ in range(N):
+    a, b = map(int, input().split())
+    mat.append((a, b))
+
+mat.sort() # aを小さい順にソートする
+now = K # 初めの所持金でKまで進めることができる
+
+for i in range(N):
+    a, b = mat[i]
+    if now >= a:
+        # 村A_iの人がB_i円くれるので、すぐに使ってB_i進む
+        now += b
+    else:
+        break
+print(now)

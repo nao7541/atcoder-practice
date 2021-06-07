@@ -4,9 +4,15 @@ N = int(input())
 l = [list(map(int, input().split())) for l in range(N)]
 
 for comb in combinations(l, 3):
-    x_max = max(comb[0][0], max(comb[1][0], comb[2][0]))
-    x_min = min(comb[0][0], min(comb[1][0], comb[2][0]))
-    y_max = max(comb[0][1], max(comb[1][1], comb[2][1]))
-    y_min = min(comb[0][1], min(comb[1][1], comb[2][1]))    
+    x1, y1 = comb[0]
+    x2, y2 = comb[1]
+    x3, y3 = comb[2]
+    x1 -= x3
+    y1 -= y3
+    x2 -= x3
+    y2 -= y3
+    if x2*y1 == x1*y2:
+        print('Yes')
+        exit()
     
-    print(comb)
+print('No')

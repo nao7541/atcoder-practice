@@ -1,3 +1,5 @@
+import math
+
 A,B = map(int,input().split())
 
 a_num = A / 0.08
@@ -9,7 +11,7 @@ tax_list = list(range(1, 101))
 
 if a_num > b_num:
     if b_num + 10 > a_num:
-        print(int(a_num))
+        print(int(math.ceil(a_num)))
     else:
         print(-1)
 elif a_num == b_num:
@@ -20,4 +22,3 @@ else:
     else:
         print(-1)
 
-#print(b_num)

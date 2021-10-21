@@ -13,5 +13,5 @@ def is_prime(n):
             return False
     return True
 
-sub = is_prime(a)
+sub = is_prime(m)
 print(sub)
